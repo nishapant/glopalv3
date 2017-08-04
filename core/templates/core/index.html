@@ -1,0 +1,15 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <ul>
+    {% for activity in all_activites %}
+    <li><a href="/core/{{ activity.id }}/">Album title here</a></li>
+    {% end for %}
+  </ul>
+</body>
+</html>
