@@ -27,8 +27,8 @@ body{
       letter-spacing: 2px;
 }
 
-button{
-    background-color: #4CAF50; /* Green */
+/*button{
+    background-color: #4CAF50;
     border: none;
     color:#e8f1f2;
     padding: 15px 32px;
@@ -45,4 +45,4 @@ button{
 div{
   width: 30%;
   float: left;
-}
+}*/
