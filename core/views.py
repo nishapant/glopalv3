@@ -9,6 +9,8 @@ from django.views import generic
 from django.views.generic import View
 from .forms import UserForm
 
+def homepage(request):
+    return render(request, 'core/homepage.html')
 
 def index(request):
     all_activites = Activity.objects.all()

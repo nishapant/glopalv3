@@ -7,7 +7,9 @@ app_name = 'core'
 urlpatterns = [
     # /core/
 
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.homepage, name='homepage'),
+
+    url(r'^index/$', views.index, name='index'),
 
     # /core/712/
     url(r'^(?P<activity_id>[0-9]+)/$', views.detail, name='detail'),
