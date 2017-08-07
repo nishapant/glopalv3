@@ -13,8 +13,11 @@ def homepage(request):
     return render(request, 'core/homepage.html')
 
 def index(request):
-    all_activites = Activity.objects.all()
-    return render(request, 'core/index.html', {'all_activites': all_activites})
+    all_activities = Activity.objects.all()
+    return render(request, 'core/index.html', {'all_activities': all_activities})
+
+def aboutus(request):
+    return render(request, 'core/aboutus.html')
 
 def detail(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
@@ -62,6 +65,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
+                #all_activities = Activity.objects.all()
                 activities = Activity.objects.filter(user=request.user)
                 return render(request, 'core/index.html', {'activities': activities})
             else:

@@ -1,0 +1,85 @@
+body{
+        background-color: #e8f1f2;
+        color: #25283d;
+        font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* The navigation bar */
+  #navbar {
+        background-color: #8ea8c3;
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+        }
+
+/* Links inside the navbar */
+  #navbar a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        padding: 20px 35px;
+        font-size: 15px;
+        color:#e8f1f2;
+        text-decoration: none;
+        letter-spacing: 2px;
+        }
+
+#bio1 {
+  width: 70%;
+  margin: 40px auto;
+  font-size: 18px;
+  line-height: 200%;
+}
+
+.ourBios {
+  width: 21%;
+  height: auto;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+#allbios {
+  display: flex;
+  display: -webkit-flex;
+  flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-wrap: wrap;
+  width: 95%;
+  margin:20px auto;
+}
+
+#groupPicture{
+  width: 40%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2,  h1{
+  text-align: center;
+}
+
+#headshot{
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.left{
+  text-align: left;
+  font-size: 18px;
+  line-height: 200%;
+}
+
+#topInfo{
+  text-align: center;
+}
+
+h1{
+  font-size: 40px;
+}

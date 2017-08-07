@@ -1,13 +1,14 @@
-
 {% extends 'core/base.html' %}
 
 {% block title %}Welcome, User{% endblock %}
+{% load staticfiles %}
+{% block href %} <link rel="stylesheet" type="text/css" href="{% static 'core/userhomepage.css' %}"> {% endblock %}
 
 {% block body %}
-  <h1>Welcome User here are your tasks: </h1>
+  <h1>Welcome {{ user.username }} here are your tasks: </h1>
   <ul>
-    {% for activity in all_activites %}
-    <li><a href=" {% url 'core:detail' activity.id %}">{{ activity.taskName }} {{activity.category}}</a></li>
+    {% for activity in all_activities %}
+      <li><a href=" {% url 'core:detail' activity.id %}">{{ activity.taskName }} {{activity.category}}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

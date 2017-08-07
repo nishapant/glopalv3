@@ -11,6 +11,8 @@ urlpatterns = [
 
     url(r'^index/$', views.index, name='index'),
 
+    url(r'^aboutus/$', views.aboutus, name='aboutus'),
+
     # /core/712/
     url(r'^(?P<activity_id>[0-9]+)/$', views.detail, name='detail'),
 

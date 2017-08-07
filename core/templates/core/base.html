@@ -4,16 +4,18 @@
   <title>{% block title %}Glo-Pal{% endblock %}</title>
   {% load staticfiles %}
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="{% static 'core/userhomepage.css' %}">
+  {% block href %}
+
+  {% endblock %}
   <link href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:300" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
   <div id="navbar">
-    <a >SIGN UP</a>
-    <a >LOG IN</a>
-    <a>HOME</a>
-    <a>ABOUT US</a>
+    <a href="{% url 'core:register' %}">SIGN UP</a>
+    <a href="{% url 'core:login_user' %}">LOG IN</a>
+    <a href="{% url 'core:homepage' %}">HOME</a>
+    <a href="{% url 'core:aboutus' %}">ABOUT US</a>
   </div>
   <br>
   <br>
