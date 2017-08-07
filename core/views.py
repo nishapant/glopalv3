@@ -51,3 +51,19 @@ class UserFormView(View):
                      return redirect('core:index')
 
         return render(request, self.template_name, {'form': form })
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                activities = Activity.objects.filter(user=request.user)
+                return render(request, 'core/index.html', {'activities': activities})
+            else:
+                return render(request, 'core/login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'core/login.html', {'error_message': 'Invalid login'})
+    return render(request, 'core/login.html')

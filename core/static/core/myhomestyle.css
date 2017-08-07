@@ -27,7 +27,7 @@ body{
       letter-spacing: 2px;
 }
 
-/*button{
+button{
     background-color: #4CAF50;
     border: none;
     color:#e8f1f2;
@@ -42,7 +42,7 @@ body{
     font-weight: bold;
 }
 
-div{
+/*div{
   width: 30%;
   float: left;
 }*/
