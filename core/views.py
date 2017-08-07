@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login
 from django.views import generic
 from django.views.generic import View
 from .forms import UserForm
+from django.contrib.auth import logout
 
 def homepage(request):
     return render(request, 'core/homepage.html')
@@ -73,3 +74,12 @@ def login_user(request):
         else:
             return render(request, 'core/login.html', {'error_message': 'Invalid login'})
     return render(request, 'core/login.html')
+
+
+def logout_user(request):
+    logout(request)
+    form = UserForm(request.POST or None)
+    context = {
+        "form": form,
+    }
+    return render(request, 'core/homepage.html', context)
