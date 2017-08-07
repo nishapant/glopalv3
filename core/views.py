@@ -66,9 +66,9 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                #all_activities = Activity.objects.all()
-                activities = Activity.objects.filter(user=request.user)
-                return render(request, 'core/index.html', {'activities': activities})
+                all_activities = Activity.objects.all()
+                #all_activities = Activity.objects.filter(user=request.user)
+                return render(request, 'core/index.html', {'all_activities': all_activities})
             else:
                 return render(request, 'core/login.html', {'error_message': 'Your account has been disabled'})
         else:
