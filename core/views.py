@@ -9,10 +9,6 @@ def index(request):
     all_activites = Activity.objects.all()
     template = loader.get_template('core/index.html')
 
-    # html = ''
-    # for activity in all_activites:
-    #     url = '/core/' + str(activity.id) + '/'
-    #     html += '<a href="'+ url + '">' + activity.taskName + '</a><br>'
     context = {
         'all_activites': all_activites,
     }
