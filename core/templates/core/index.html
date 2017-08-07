@@ -1,14 +1,16 @@
 <!doctype html>
 
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Welcome, User</title>
 </head>
 <body>
+  <h1>Welcome User here are your tasks: </h1>
   <ul>
     {% for activity in all_activites %}
-    <li><a href="/core/{{ activity.id }}/">{{ activity.taskName }}</a></li>
+    <li><a href=" {% url 'core:detail' activity.id %}">{{ activity.taskName }} {{activity.category}}</a></li>
     {% endfor %}
   </ul>
 </body>
