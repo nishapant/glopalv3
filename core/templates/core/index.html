@@ -3,6 +3,8 @@
 
 <html lang="en">
 <head>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'core/myhomestyle.css' %}"
   <meta charset="utf-8">
   <title>Welcome, User</title>
   <link href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:300" rel="stylesheet">
@@ -15,6 +17,9 @@
     <a href="#">HOME</a>
     <a href="#">ABOUT US</a>
   </div>
+  <br>
+  <br>
+  <br>
   <h1>Welcome User here are your tasks: </h1>
   <ul>
     {% for activity in all_activites %}
