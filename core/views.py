@@ -39,6 +39,8 @@ def add_total(request, activity_id):
     else:
         return JsonResponse({'success':True})
 
+
+
 class UserFormView(View):
     form_class = UserForm
     template_name = 'core/registration_form.html'
