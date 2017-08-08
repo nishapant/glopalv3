@@ -11,10 +11,17 @@
     <p>{{error_message}}</p>
   {% endif %}
 
-<form action="{% url 'core:add_total' activity.id %}" method="post">
+  {% for activity in all_activities %}
+    <p>hello</p>
+  {% endfor %}
+
+
+
+<!-- <form action="{% url 'core:add_total' activity.id %}" method="post">
     {% csrf_token %}
     {% for activity in all_activities %}
-      <input type="radio" id="activity{{ forloop.counter }}" name="activity" value="{{ activity.id }}"/>
+      <input type="radio" id="activity{{ forloop.counter }}" name="activity" value="{{ activity.id }}">
+      <p>hello</p>
       <label for="activity{{ forloop.counter }}" >
           {{ activity.taskName }} {{activity.category}}
           {% if activity.is_complete %}
@@ -23,6 +30,6 @@
       </label> <br>
     {% endfor %}
     <input type="submit" value="add points">
-</form>
+</form> -->
 
 {% endblock %}

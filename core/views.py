@@ -9,6 +9,7 @@ from django.views import generic
 from django.views.generic import View
 from .forms import UserForm
 from django.contrib.auth import logout
+from django.http import JsonResponse
 
 def homepage(request):
     return render(request, 'core/homepage.html')
@@ -27,16 +28,15 @@ def detail(request, activity_id):
 def add_total(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
     try:
-        selected_task = activity(pk=request.POST['activity'])
+        if activity.is_complete:
+            activity.is_complete = False
+        else:
+            activity.is_complete = True
+        activity.save()
     except (KeyError, Activity.DoesNotExist):
-        return render(request, 'core/index.html',  {
-            'activity': activity,
-            'error_message': 'there is an error'
-        })
+        return JsonResponse({'success':False})
     else:
-        selected_task.is_complete = True
-        selected_task.save()
-        return render(request, 'core/index.html', {'activity': activity})
+        return JsonResponse({'success':True})
 
 class UserFormView(View):
     form_class = UserForm
