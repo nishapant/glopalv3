@@ -26,18 +26,18 @@ def detail(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
     return render(request, 'core/detail.html', {'activity': activity})
 
-# def add_total(request, activity_id):
-#     activity = get_object_or_404(Activity, pk=activity_id)
-#     try:
-#         if activity.is_complete:
-#             activity.is_complete = False
-#         else:
-#             activity.is_complete = True
-#         activity.save()
-#     except (KeyError, Activity.DoesNotExist):
-#         return JsonResponse({'success':False})
-#     else:
-#         return JsonResponse({'success':True})
+def add_total(request, activity_id):
+    activity = get_object_or_404(Activity, pk=activity_id)
+    try:
+        if activity.is_complete:
+            activity.is_complete = False
+        else:
+            activity.is_complete = True
+        activity.save()
+    except (KeyError, Activity.DoesNotExist):
+        return JsonResponse({'success':False})
+    else:
+        return JsonResponse({'success':True})
 
 class UserFormView(View):
     form_class = UserForm

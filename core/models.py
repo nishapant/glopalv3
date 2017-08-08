@@ -11,3 +11,7 @@ class Activity(models.Model):
 
     def __str__(self):
         return self.taskName + ' - ' + self.category
+
+# class UserProfile(models.Model):
+#      user = models.ForeignKey(User, default=1)
+#      points = models.CharField(max_length=10)
