@@ -6,9 +6,23 @@
 
 {% block body %}
   <h1>Welcome {{ user.username }} here are your tasks: </h1>
-  <ul>
+
+  {% if error_message %}
+    <p>{{error_message}}</p>
+  {% endif %}
+
+<form action="{% url 'core:add_total' activity.id %}" method="post">
+    {% csrf_token %}
     {% for activity in all_activities %}
-      <li><a href=" {% url 'core:detail' activity.id %}">{{ activity.taskName }} {{activity.category}}</a></li>
+      <input type="radio" id="activity{{ forloop.counter }}" name="activity" value="{{ activity.id }}"/>
+      <label for="activity{{ forloop.counter }}" >
+          {{ activity.taskName }} {{activity.category}}
+          {% if activity.is_complete %}
+            <p>good job</p>
+          {% endif %}
+      </label> <br>
     {% endfor %}
-  </ul>
+    <input type="submit" value="add points">
+</form>
+
 {% endblock %}

@@ -24,6 +24,20 @@ def detail(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
     return render(request, 'core/detail.html', {'activity': activity})
 
+def add_total(request, activity_id):
+    activity = get_object_or_404(Activity, pk=activity_id)
+    try:
+        selected_task = activity(pk=request.POST['activity'])
+    except (KeyError, Activity.DoesNotExist):
+        return render(request, 'core/index.html',  {
+            'activity': activity,
+            'error_message': 'there is an error'
+        })
+    else:
+        selected_task.is_complete = True
+        selected_task.save()
+        return render(request, 'core/index.html', {'activity': activity})
+
 class UserFormView(View):
     form_class = UserForm
     template_name = 'core/registration_form.html'
