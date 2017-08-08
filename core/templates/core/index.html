@@ -12,15 +12,15 @@
                 <div>
                     <div>
                         <div class="caption">
-                            <h2>{{ activity.taskName }}</h2>
-                            <h4>{{ activity.category }}</h4>
+                            <h3>{{ activity.taskName }} : {{ activity.is_complete }} points </h3>
+                            <!-- <h4>{{ activity.category }}</h4> -->
 
                             <!-- View Details -->
                             <a href="{% url 'core:detail' activity.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
 
                             <!-- Favorite activity -->
                             <a href="{% url 'core:add_total' activity.id %}" class="btn btn-default btn-sm btn-favorite" role="button">
-                                <span class="glyphicon glyphicon-star {% if activity.is_complete %}active{% endif %}"></span>
+                                <span class="glyphicon glyphicon-star {% if activity.is_complete > 0 %}active{% endif %}"></span>
                             </a>
 
                         </div>

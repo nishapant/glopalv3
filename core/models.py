@@ -7,7 +7,8 @@ class Activity(models.Model):
     user = models.ForeignKey(User, default=1)
     taskName = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
-    is_complete = models.BooleanField(default=False)
+    #is_complete = models.BooleanField(default=False)
+    is_complete = models.IntegerField(default=1)
 
     def __str__(self):
         return self.taskName + ' - ' + self.category

@@ -29,15 +29,17 @@ def detail(request, activity_id):
 def add_total(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
     try:
-        if activity.is_complete:
-            activity.is_complete = False
-        else:
-            activity.is_complete = True
+        activity.is_complete = activity.is_complete + 10
+        # else:
+        #     activity.is_complete += 0
         activity.save()
     except (KeyError, Activity.DoesNotExist):
-        return JsonResponse({'success':False})
+        return JsonResponse({'success':0})
+        #return render(request, 'core/index.html', {'all_activities': all_activities})
     else:
-        return JsonResponse({'success':True})
+        #return JsonResponse({'success':10})
+        all_activities = Activity.objects.all()
+        return render(request, 'core/index.html', {'all_activities': all_activities})
 
 
 
