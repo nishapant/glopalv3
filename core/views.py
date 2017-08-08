@@ -1,5 +1,3 @@
-
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Activity
@@ -37,7 +35,7 @@ def add_total(request, activity_id):
         return JsonResponse({'success':0})
     else:
         all_activities = Activity.objects.all()
-        return render(request, 'core/index.html', {'all_activities': all_activities})
+        return redirect('http://127.0.0.1:8000/core/index/') #{'all_activities': all_activities})
 
 
 
@@ -85,7 +83,7 @@ def login_user(request):
                 login(request, user)
                 all_activities = Activity.objects.all()
                 #all_activities = Activity.objects.filter(user=request.user)
-                return render(request, 'core/index.html', {'all_activities': all_activities})
+                return redirect('http://127.0.0.1:8000/core/index/')
             else:
                 return render(request, 'core/login.html', {'error_message': 'Your account has been disabled'})
         else:
@@ -99,4 +97,4 @@ def logout_user(request):
     context = {
         "form": form,
     }
-    return render(request, 'core/homepage.html', context)
+    return redirect('http://127.0.0.1:8000/core/')
