@@ -10,6 +10,7 @@ from django.views.generic import View
 from .forms import UserForm
 from django.contrib.auth import logout
 from django.http import JsonResponse
+from django.db.models import Q
 
 def homepage(request):
     return render(request, 'core/homepage.html')

@@ -11,4 +11,3 @@ class Activity(models.Model):
 
     def __str__(self):
         return self.taskName + ' - ' + self.category
-#    points = models.CharField(max_length=10)

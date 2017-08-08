@@ -24,6 +24,4 @@ urlpatterns = [
 
     #core/7/favorite
     url(r'^(?P<activity_id>[0-9]+)/add_total/$', views.add_total, name='add_total'),
-
-
 ]
