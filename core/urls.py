@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
 
     #core/7/favorite
-    url(r'^(?P<activity_id>[0-9]+)/add_total/$', views.add_total, name='add_total'),
+    # url(r'^(?P<activity_id>[0-9]+)/add_total/$', views.add_total, name='add_total'),
 ]
