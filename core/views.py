@@ -35,9 +35,7 @@ def add_total(request, activity_id):
         activity.save()
     except (KeyError, Activity.DoesNotExist):
         return JsonResponse({'success':0})
-        #return render(request, 'core/index.html', {'all_activities': all_activities})
     else:
-        #return JsonResponse({'success':10})
         all_activities = Activity.objects.all()
         return render(request, 'core/index.html', {'all_activities': all_activities})
 
