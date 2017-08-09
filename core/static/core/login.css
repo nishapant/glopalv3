@@ -1,4 +1,3 @@
-
 body{
         background-color: #e8f1f2;
         color: #25283d;
@@ -25,30 +24,4 @@ body{
       color:#e8f1f2;
       text-decoration: none;
       letter-spacing: 2px;
-}
-
-button{
-    background-color: #4CAF50;
-    border: none;
-    color:#e8f1f2;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 2px;
-    font-weight: bold;
-}
-
-#all_content{
-  width: 80%;
-  margin: 0 auto;
-}
-
-.class{
-  width: 29%;
-  margin: 5px;
-  background-color: blue;
 }
