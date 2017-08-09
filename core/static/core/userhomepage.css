@@ -27,28 +27,45 @@ body{
       letter-spacing: 2px;
 }
 
-button{
-    background-color: #4CAF50;
-    border: none;
-    color:#e8f1f2;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 2px;
-    font-weight: bold;
-}
-
 #all_content{
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  padding: none;
+  text-align: center;
 }
 
-.class{
-  width: 29%;
-  margin: 5px;
-  background-color: blue;
+.task{
+  margin-top: 30px;
+  margin-left: 13px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  padding: 0;
+  display: inline-block;
+  width: 17%;
+  text-align: center;
+}
+
+
+
+#name{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.custom{
+  width: 100% !important;
+  height: 190px !important;
+  padding-top: 45px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: 18px !important;
+  text-transform: lowercase !important;
+}
+
+.leaf{
+  font-size: 40px !important;
+  margin-bottom: 10px !important;
 }
