@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mathfilters',
 ]
 
 # AUTH_PROFILE_MODULE = 'accounts.UserProfile'

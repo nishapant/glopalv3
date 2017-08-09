@@ -3,7 +3,6 @@ body{
         color: #25283d;
         font-family: 'Source Sans Pro', sans-serif;
 }
-
 #navbar {
       background-color: #8ea8c3;
       overflow: hidden;
@@ -24,4 +23,11 @@ body{
       color:#e8f1f2;
       text-decoration: none;
       letter-spacing: 2px;
+}
+
+.loginMain{
+  margin-top: 100px !important;
+  margin-left:550px !important;
+  width: 80% !important;
+  display: block;
 }
