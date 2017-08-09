@@ -7,7 +7,7 @@ function goBack(){
   if(index == -1){
     index = 3;
   }
-  document.body.style.backgroundImage = "url('images/" +pictureNames[index] + "')";
+  document.body.style.backgroundImage = "url('/static/core/images/" +pictureNames[index] + "')";
   document.body.style.color = fontColors[index];
 }
 
@@ -16,7 +16,7 @@ function goForward(){
   if(index == 4){
     index=0;
   }
-  document.body.style.backgroundImage = "url('images/" +pictureNames[index] + "')";
+  document.body.style.backgroundImage = "url('/static/core/images/" +pictureNames[index] + "')";
   document.body.style.color = fontColors[index];
 
 }
