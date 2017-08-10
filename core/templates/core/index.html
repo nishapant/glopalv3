@@ -1,41 +1,39 @@
 {% extends 'core/base.html' %}
-
 {% block title %}Welcome, User{% endblock %}
 {% load staticfiles %}
-{% block href %} <link rel="stylesheet" type="text/css" href="{% static 'core/userhomepage.css' %}"> {% endblock %}
+<!-- {% load mathfilters %} -->
+{% block href %}
+  <link rel="stylesheet" type="text/css" href="{% static 'core/userhomepage.css' %}">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
 
 {% block body %}
-  <h1>Welcome {{ user.username }} here are your tasks: </h1>
 
+  <h1 id="name">Welcome, {{ user.username }}</h1>
 
+      <div id="all_content">
             {% for activity in all_activities %}
-                <div>
+                <div class= "task">
                     <div>
                         <div class="caption">
-                            <h3>{{ activity.taskName }} : {{ activity.is_complete }} points </h3>
+                            <!-- <h3>{{ activity.taskName }} : {{ activity.is_complete }} points </h3> -->
                             <!-- <h4>{{ activity.category }}</h4> -->
 
                             <!-- View Details -->
-                            <a href="{% url 'core:detail' activity.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                            <!-- <a href="{% url 'core:detail' activity.id %}" class="btn btn-primary btn-sm" role="button">View Details</a> -->
 
                             <!-- Favorite activity -->
-                            <a href="{% url 'core:add_total' activity.id %}" class="btn btn-default btn-sm btn-favorite" role="button">
-                                <span class="glyphicon glyphicon-star {% if activity.is_complete > 0 %}active{% endif %}"></span>
+                            <a href="{% url 'core:add_total' activity.id %}" class="btn btn-primary custom"role="button">
+                              <i class="fa fa-pagelines leaf" aria-hidden="true"></i><br>
+                                <b>{{ activity.taskName }}</b> <br>
+                                {{ activity.is_complete }} points
+                                <!-- <span class="{% if activity.is_complete > 0 %}active{% endif %}"></span> -->
                             </a>
 
                         </div>
                     </div>
                 </div>
-                {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+                <!-- {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %} -->
             {% endfor %}
-
-    <!-- {% for activity in all_activities %}
-      <input type="radio" id="activity{{ forloop.counter }}" name="activity" value="{{ activity.id }}"/>
-      <label for="activity{{ forloop.counter }}" >
-          {{ activity.taskName }} {{activity.category}}
-      </label>
-      <br>
-    {% endfor %}
-    <input type="submit" value="points"/> -->
-
+      </div>
 {% endblock %}

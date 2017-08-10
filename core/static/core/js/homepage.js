@@ -7,7 +7,11 @@ function goBack(){
   if(index == -1){
     index = 3;
   }
+<<<<<<< HEAD
   document.body.style.backgroundImage = "url('/static/core/images/" +pictureNames[index] + "')";
+=======
+  document.body.style.backgroundImage = "url('templates/core/" +pictureNames[index] + "')";
+>>>>>>> 9e3666e40ad1e4402c2ff0ece2009b436cfe61a1
   document.body.style.color = fontColors[index];
 }
 
@@ -16,7 +20,11 @@ function goForward(){
   if(index == 4){
     index=0;
   }
+<<<<<<< HEAD
   document.body.style.backgroundImage = "url('/static/core/images/" +pictureNames[index] + "')";
+=======
+  document.body.style.backgroundImage = "url('/templates/core/" +pictureNames[index] + "')";
+>>>>>>> 9e3666e40ad1e4402c2ff0ece2009b436cfe61a1
   document.body.style.color = fontColors[index];
 
 }

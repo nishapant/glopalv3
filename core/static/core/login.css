@@ -1,0 +1,33 @@
+body{
+        background-color: #e8f1f2;
+        color: #25283d;
+        font-family: 'Source Sans Pro', sans-serif;
+}
+#navbar {
+      background-color: #8ea8c3;
+      overflow: hidden;
+      position: fixed; /* Set the navbar to fixed position */
+      top: 0; /* Position the navbar at the top of the page */
+      width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+#navbar a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      padding: 20px 35px;
+      font-size: 15px;
+      color:#e8f1f2;
+      text-decoration: none;
+      letter-spacing: 2px;
+}
+
+.loginMain{
+  margin-top: 100px !important;
+  margin-left:550px !important;
+  width: 80% !important;
+  display: block;
+}
